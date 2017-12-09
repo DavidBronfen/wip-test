@@ -1,0 +1,63 @@
+/deep/ app-hero {
+  width: 60%;
+  margin: 40px auto;
+  display: block;
+
+  h1 {
+    margin: 0;
+    color: #3e3d39;
+  }
+
+  .search-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 25px auto 0;
+    position: relative;
+
+    .mat-input-container {
+      width: 90%;
+
+      .mat-input-wrapper {
+        padding-bottom: .9em;
+
+        .mat-input-element,
+        .mat-input-placeholder {
+            padding-left: 5px;
+        }
+
+        .mat-input-subscript-wrapper {
+          margin: 0;
+        }
+      }
+    }
+
+    .search-button {
+      height: 40px;
+      min-width: 10%;
+      padding: 0;
+    }
+
+    .search-result {
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-bottom: none;
+      position: relative;
+      top: -1.35em;
+
+      p {
+        padding: 10px 5px;
+        color: #3e3d39;
+        transition: all .25s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #b2c1be;
+        }
+      }
+      .divider {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+}

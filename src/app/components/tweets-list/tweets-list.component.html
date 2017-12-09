@@ -1,0 +1,8 @@
+<div class="user-tweets">
+  <h3 mat-subheader>Tweets by user</h3>
+  <mat-card class="tweet-card" *ngFor="let tweet of tweets$ | async">
+    <app-tweet [tweet]=tweet></app-tweet>
+  </mat-card>
+
+  <button mat-raised-button color="accent" (click)="loadMoreTweets(tweets$); false">Load more tweets</button>
+</div>

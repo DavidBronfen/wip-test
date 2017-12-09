@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+
+<div class="search-container">
+  <mat-input-container color="primary">
+    <input matInput [formControl]="term" placeholder="Search for tweeter user" value="">
+  </mat-input-container>
+
+  <a mat-raised-button color="accent" class="search-button" (click)=displayUsers($event) routerLink=".">
+    <mat-icon>search</mat-icon>
+  </a>
+
+  <div *ngIf="showSearchResult" class="search-result">
+    <mat-list-item *ngFor="let user of users$ | async | slice:0:10">
+      <a>
+        <p>{{user.screen_name}}</p>
+      </a>
+      <div class="divider"></div>
+    </mat-list-item>
+  </div>
+</div>

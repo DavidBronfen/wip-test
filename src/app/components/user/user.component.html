@@ -1,0 +1,13 @@
+<mat-list-item>
+  <div *ngIf="user.profile_image_url; else placeholder">
+    <img mat-line mat-list-avatar src="{{user.profile_image_url}}" alt="{{user.name}}s profile image">
+  </div>
+
+  <ng-template #placeholder>
+    <mat-icon mat-list-icon>account_circle</mat-icon>
+  </ng-template>
+
+  <h4 mat-line>{{user.name}}</h4>
+  <p mat-line>{{user.screen_name}}</p>
+  <p mat-line>{{user.location}}</p>
+</mat-list-item>

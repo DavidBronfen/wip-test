@@ -1,0 +1,5 @@
+<app-hero (updateUserListEvent)="updateUserList($event)"></app-hero>
+<div id="search-result">
+  <app-users-list *ngIf="showUserList" (updateTweetListEvent)="updateTweetList($event)"></app-users-list>
+  <app-tweets-list *ngIf="showTweetList"></app-tweets-list>
+</div>

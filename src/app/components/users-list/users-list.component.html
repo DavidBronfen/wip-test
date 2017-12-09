@@ -1,0 +1,8 @@
+<div class="user-list">
+  <mat-list>
+    <h3 mat-subheader>Twitter Users search result</h3>
+    <div *ngFor="let user of users$ | async">
+      <app-user [user]=user (click)=displayUserTweets(user.id)></app-user>
+    </div>
+  </mat-list>
+</div>
