@@ -32,7 +32,7 @@ export function reducer(state = initialState, action: tweetsList.Actions): State
     }
 
     case tweetsList.LOAD_MORE_TWEETS_SUCCESS: {
-      return Object.assign({}, state, action.payload);
+      return state.concat(action.payload);
     }
 
     case tweetsList.LOAD_MORE_TWEETS_FAILED: {

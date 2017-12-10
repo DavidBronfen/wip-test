@@ -17,6 +17,7 @@ export class TweetsListComponent {
 
   public tweets$: Observable<ITweet[]>;
   public selectedUser: String;
+  public lastTweetiId = 0;
   private errorMessage: String;
 
   constructor(private store: Store<fromRoot.State>) {
@@ -26,11 +27,12 @@ export class TweetsListComponent {
       );
   }
 
-  loadMoreTweets(tweets$) {
-    tweets$.subscribe(t => this.store.dispatch(new tweetsListAction.LoadMoreTweetsAction({
+  loadMoreTweets() {
+    this.tweets$.subscribe(t => this.lastTweetiId = t.length);
+    this.store.dispatch(new tweetsListAction.LoadMoreTweetsAction({
       userUid: this.selectedUser,
-      lastTweetId: t.length
-    })));
+      lastTweetId: this.lastTweetiId
+    }))
   }
 
 }
